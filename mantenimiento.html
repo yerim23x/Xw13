@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mantenimiento – lopezx23</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(ellipse at center, #0e1f3a 0%, #0a1628 100%);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      overflow: hidden;
+    }
+
+    /* RGB text animation */
+    @keyframes rgb-shift {
+      0%   { color: #ff0000; text-shadow: 0 0 20px #ff0000, 0 0 40px #ff000066; }
+      16%  { color: #ff8800; text-shadow: 0 0 20px #ff8800, 0 0 40px #ff880066; }
+      33%  { color: #ffff00; text-shadow: 0 0 20px #ffff00, 0 0 40px #ffff0066; }
+      50%  { color: #00ff88; text-shadow: 0 0 20px #00ff88, 0 0 40px #00ff8866; }
+      66%  { color: #00aaff; text-shadow: 0 0 20px #00aaff, 0 0 40px #00aaff66; }
+      83%  { color: #aa00ff; text-shadow: 0 0 20px #aa00ff, 0 0 40px #aa00ff66; }
+      100% { color: #ff0000; text-shadow: 0 0 20px #ff0000, 0 0 40px #ff000066; }
+    }
+
+    @keyframes rgb-shift-delayed {
+      0%   { color: #00aaff; text-shadow: 0 0 14px #00aaff, 0 0 28px #00aaff66; }
+      16%  { color: #aa00ff; text-shadow: 0 0 14px #aa00ff, 0 0 28px #aa00ff66; }
+      33%  { color: #ff0000; text-shadow: 0 0 14px #ff0000, 0 0 28px #ff000066; }
+      50%  { color: #ff8800; text-shadow: 0 0 14px #ff8800, 0 0 28px #ff880066; }
+      66%  { color: #ffff00; text-shadow: 0 0 14px #ffff00, 0 0 28px #ffff0066; }
+      83%  { color: #00ff88; text-shadow: 0 0 14px #00ff88, 0 0 28px #00ff8866; }
+      100% { color: #00aaff; text-shadow: 0 0 14px #00aaff, 0 0 28px #00aaff66; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-12px); }
+    }
+
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .logo {
+      width: 80px;
+      margin-bottom: 32px;
+      animation: float 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 18px rgba(59,130,246,0.7));
+    }
+
+    h1 {
+      font-size: clamp(1.6rem, 6vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-align: center;
+      animation: rgb-shift 3s linear infinite;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: clamp(1rem, 3.5vw, 1.4rem);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-align: center;
+      animation: rgb-shift-delayed 3s linear infinite;
+    }
+
+    /* spinning ring decoration */
+    .ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      animation: spin-slow 8s linear infinite;
+    }
+    .ring-1 {
+      width: 260px; height: 260px;
+      border-top-color: rgba(59,130,246,0.3);
+      border-right-color: rgba(59,130,246,0.1);
+    }
+    .ring-2 {
+      width: 340px; height: 340px;
+      border-bottom-color: rgba(100,60,200,0.25);
+      border-left-color:   rgba(100,60,200,0.1);
+      animation-direction: reverse;
+      animation-duration: 12s;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="ring ring-1"></div>
+  <div class="ring ring-2"></div>
+
+  <div class="content">
+    <img src="charizard.png" alt="lopezx23" class="logo" />
+    <h1>Estamos en mantenimiento</h1>
+    <p>Vuelve pronto</p>
+  </div>
+</body>
+</html>
